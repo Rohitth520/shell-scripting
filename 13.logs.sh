@@ -50,6 +50,6 @@ then  #not installed so install now
     VALIDATE $? "Installing Git"
 else
 
-    echo -e "git is already ...... $Y Installed" $N"
+    echo -e "git is already ...... $Y Installed $N"
 fi
 
