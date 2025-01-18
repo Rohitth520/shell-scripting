@@ -13,7 +13,7 @@ VALIDATE() {
 
 }
 
-if [ $USERID -ne 0]
+if [ $USERID -ne 0 ]
 then 
     echo "ERROR::You must have Sudo access to execute the Script"
     exit 1
