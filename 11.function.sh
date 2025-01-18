@@ -1,9 +1,9 @@
-#!bin/bash
+#!/bin/bash
 
 USERID=$(id -u)
 
 VALIDATE() {
-    if [$1 -ne 0]
+    if [ $1 -ne 0 ]
     then 
         echo "$2 ........ failure"
     exit 1
@@ -15,14 +15,14 @@ VALIDATE() {
 
 if [ $USERID -ne 0]
 then 
-    echo "ERROR::You Must have Sudo access to execute the Script"
+    echo "ERROR::You must have Sudo access to execute the Script"
     exit 1
 fi
 
 dnf list installed mysql
 
 
-if [$? -ne 0]
+if [ $? -ne 0 ]
 then
     dnf install mysql -y
     VALIDATE $? "Installing mysql"
@@ -31,8 +31,8 @@ else
 fi
 
 
-dnf installed git
-if [$? -ne 0]
+dnf list installed git
+if [ $? -ne 0 ]
 then
     dnf install git -y
     VALIDATE $? "Installing git"
